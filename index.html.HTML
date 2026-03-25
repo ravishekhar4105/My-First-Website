@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ravi Shekhar </title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#0f172a;
+color:white;
+}
+
+/* Navbar */
+nav{
+display:flex;
+justify-content:space-between;
+padding:15px 50px;
+background:#020617;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin:0 10px;
+}
+
+/* Hero Section */
+.hero{
+text-align:center;
+padding:100px 20px;
+animation:fadeIn 2s ease;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero span{
+color:#38bdf8;
+}
+
+/* Sections */
+section{
+padding:40px;
+margin:20px;
+background:#1e293b;
+border-radius:10px;
+}
+
+/* Skills */
+.skills li{
+margin:5px 0;
+}
+
+/* Button */
+.btn{
+display:inline-block;
+padding:10px 20px;
+background:#38bdf8;
+color:black;
+border-radius:5px;
+text-decoration:none;
+margin-top:10px;
+cursor:pointer;
+}
+
+/* Animation */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(20px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+footer{
+text-align:center;
+padding:20px;
+background:#020617;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav>
+<h2>My Profile</h2>
+<div>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+<h1>Hello, I'm <span>Ravi Shekhar</span></h1>
+<p>ECE Student | Future Engineer</p>
+<input type="upload">
+
+
+
+</div>
+
+<!-- Resume Upload Section -->
+<section>
+<h2>Upload Resume</h2>
+
+<input type="file" id="resumeFile">
+<br><br>
+
+<button class="btn" onclick="uploadResume()">Upload</button>
+
+<p id="message"></p>
+
+<a id="downloadLink" style="display:none; color:#38bdf8;">Download Uploaded Resume</a>
+
+</section>
+
+<!-- About -->
+<section id="about">
+<h2>About Me</h2>
+<p>I am an ECE student preparing for GATE and learning Web Development.</p>
+<p>Passionate Python Developer with internship experience in AI and Data Analytics under AICTE, IBM SkillsBuild, and Shell India. Skilled in Python, Machine Learning, and Data Visualization, with a strong interest in developing smart and efficient solutions.</p>
+</section>
+
+<!-- Skills -->
+<section id="skills">
+<h2>Skills</h2>
+<ul class="skills">
+<li>C++</li>
+<li>Python</li>
+<li>sql</li>
+<li>HTML</li>
+<li>CSS</li>
+<li>JavaScript</li>
+<li>Networking</li>
+</ul>
+</section>
+
+<!-- Projects -->
+<section id="projects">
+<h2>Projects</h2>
+
+<h3>Register Website</h3>
+<p>Simple registration form using HTML, CSS, JS</p>
+
+<h3>Electromagnetic Wave Absorption Analysis using CST Studio Suite (Ongoing)</h3>
+<p> Water Quality Prediction using ML (Python, Random Forest, Logistic Regression)</p>
+
+</section>
+
+<!-- Contact -->
+<section id="contact">
+<h2>Contact</h2>
+<p>Email: ravishekhar4105@gmail.com</p>
+<p>Phone: 7294963104</p>
+</section>
+
+<footer>
+<p>© 2026 Ravi Shekhar </p>
+</footer>
+
+<script>
+
+function uploadResume(){
+
+let file = document.getElementById("resumeFile").files[0];
+
+if(file){
+document.getElementById("message").innerText = "Resume Uploaded Successfully";
+
+let url = URL.createObjectURL(file);
+
+let link = document.getElementById("downloadLink");
+link.href = url;
+link.innerText = "Download Uploaded Resume";
+link.style.display = "block";
+}
+else{
+document.getElementById("message").innerText = "Please select a file";
+}
+
+}
+
+</script>
+
+</body>
+</html>
